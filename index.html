@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#19151f">
+  <meta name="description" content="VÉRA — El Corazón, tu historia interactiva.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>VÉRA · El Corazón</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brandmark">♡</div>
+      <div><p class="eyebrow">TU UNIVERSO NARRATIVO</p><h1>VÉRA</h1></div>
+      <button id="exportBtn" class="quiet" title="Exportar copia de seguridad">Exportar</button>
+    </header>
+
+    <section class="hero">
+      <div class="heart-icon">♡</div>
+      <p class="eyebrow">EL LUGAR DONDE VIVE LA HISTORIA</p>
+      <h2>El Corazón</h2>
+      <p class="intro">Cada escena deja una huella. Cada huella forma parte de vuestra historia.</p>
+    </section>
+
+    <section class="story-card">
+      <div class="story-heading">
+        <div><p class="eyebrow">HISTORIA ACTIVA</p><h3>Alejandro Ferretti &amp; Julianne Moore</h3></div>
+        <span class="pill">En curso</span>
+      </div>
+      <p class="small">Modo: novela interactiva · Los mensajes se guardan en este dispositivo.</p>
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <label for="sceneInput">Tu narración</label>
+      <textarea id="sceneInput" rows="4" placeholder="Escribí lo que hace o dice Alejandro…"></textarea>
+      <div class="actions">
+        <button id="saveBtn" class="primary">Guardar escena</button>
+        <button id="clearInputBtn" class="secondary">Limpiar</button>
+      </div>
+      <p id="status" class="status" role="status">Tus escenas se guardan localmente en este navegador.</p>
+    </section>
+
+    <section class="memory-card">
+      <div class="section-title"><span class="line-icon">✧</span><div><p class="eyebrow">MEMORIA NARRATIVA</p><h3>Recuerdos importantes</h3></div></div>
+      <p class="small">Los mensajes se archivan automáticamente. Los recuerdos oficiales necesitan tu aprobación.</p>
+      <div id="memoryList" class="memory-list"></div>
+      <label for="memoryInput">Proponer un recuerdo importante</label>
+      <textarea id="memoryInput" rows="3" placeholder="Ej.: Julianne aceptó comenzar una relación con Alejandro…"></textarea>
+      <button id="proposeMemoryBtn" class="primary full">Proponer recuerdo</button>
+    </section>
+
+    <section class="memory-card">
+      <div class="section-title"><span class="line-icon">⌘</span><div><p class="eyebrow">CANON</p><h3>Reglas de la historia</h3></div></div>
+      <ul class="canon-list">
+        <li>La usuaria interpreta a Alejandro.</li>
+        <li>La IA interpretará a Julianne cuando se conecte una IA real.</li>
+        <li>Los mensajes se archivan automáticamente.</li>
+        <li>Los recuerdos importantes requieren aprobación.</li>
+        <li>La memoria individual y la compartida deben mantenerse separadas.</li>
+      </ul>
+      <label for="canonInput">Notas del canon</label>
+      <textarea id="canonInput" rows="4" placeholder="Añadí o corregí detalles confirmados de la historia…"></textarea>
+      <button id="saveCanonBtn" class="secondary full">Guardar notas del canon</button>
+    </section>
+
+    <footer><p>Prototipo inicial de VÉRA · Sin IA conectada todavía.</p><p>Guardá copias de seguridad con el botón Exportar.</p></footer>
+  </main>
+  <nav class="dock" aria-label="Navegación">
+    <a href="#top" aria-label="Inicio">⌂</a><a class="selected" href="#messages" aria-label="El Corazón">♡</a><a href="#memoryList" aria-label="Memoria">✧</a><button id="importBtn" aria-label="Importar copia de seguridad">⇧</button>
+  </nav>
+  <input type="file" id="importFile" accept="application/json,.json" hidden>
+  <script src="app.js"></script>
+</body>
+</html>

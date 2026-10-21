@@ -1,0 +1,10 @@
+{
+  "name": "VÉRA — El Corazón",
+  "short_name": "VÉRA",
+  "description": "Tu historia interactiva, sus recuerdos y su canon.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#100e14",
+  "theme_color": "#19151f",
+  "lang": "es"
+}
